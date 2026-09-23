@@ -13,20 +13,33 @@ public class Prodotto {
     
     // Spazio attributi
     
-    private int codice; // variabili di istanza, non serve inizializzarle
+    // Inizializzatore di classe
+    private static int contatore;
+    private final int codice; // variabili di istanza, non serve inizializzarle
     private String descrizione;
     private String dataDiProduzione;
     private float costo;
     
+    // Inizializzatore statico eseguito al caricamento della classe in memoria
+    static {
+        contatore = -1;
+    }
+    // Inizializzatore di istanza (non si usa spesso)
+    /*
+    {
+        this.codice = 1;
+    }
+    */
     // Spazio metodi
     
-    //COSTRUTTORE
-    
+    // Costruttore
     public Prodotto() {
+        this("0000-00-00", "Non disponibile", 0.0F);
+        /*
         this.codice = -1;
         this.dataDiProduzione = "0000-00-00";
         this.descrizione = "Non disponibile";
-        this.costo = 0.0F;
+        this.costo = 0.0F;*/
     }
     
     public Prodotto(int codice, String dataDiProduzione, String descrizione, float costo) {
@@ -34,6 +47,11 @@ public class Prodotto {
         this.dataDiProduzione = dataDiProduzione;
         this.descrizione = descrizione;
         this.costo = costo;
+        contatore++;
+    } // Overloading
+    
+    public Prodotto(String dataDiProduzione, String descrizione, float costo) {
+        this(contatore, dataDiProduzione, descrizione, costo);
     }
     
     public int getCodice() {
@@ -48,22 +66,33 @@ public class Prodotto {
     public float getCosto() {
         return costo;
     }
-    
+    public static int getContatore() {
+        // this.codice = 1; // nel contesto statico this non può mai essere invocato
+        return contatore;
+    }
+    /*
     public void setCodice(int codice) {
         this.codice = codice;
-    }
+    }*/ //set non possibile se la variabile è final
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
     }
     public void setDataDiProduzione(String dataDiProduzione) {
         this.dataDiProduzione = dataDiProduzione;
     }
+    
+    /*
+    public void setDataDiProduzione(int anno, int mese, int giorno) { 
+        
+    }
+    */ // Overloading
+    
     public void setCosto(float costo) {
         this.costo = costo;
     }
     
     public Prodotto clona() {
-        return new Prodotto(this.codice, this.dataDiProduzione, this.descrizione, this.costo);
+        return new Prodotto(this.dataDiProduzione, this.descrizione, this.costo);
     }
     
     public void stampaInfo() {
@@ -71,6 +100,7 @@ public class Prodotto {
         // String descrizione = "Ciao!"; <-- variabile locale
         
         System.out.println("*** Prodotto ***");
+        
         System.out.print("Codice: ");
         System.out.println(codice);
         

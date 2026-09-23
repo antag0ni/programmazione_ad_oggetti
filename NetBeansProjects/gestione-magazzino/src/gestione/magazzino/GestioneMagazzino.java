@@ -18,11 +18,17 @@ public class GestioneMagazzino {
         // TODO code application logic here
         //System.out.println("Hello World");
         
+        System.out.print("contatore: ");
+        System.out.println(Prodotto.getContatore());
+        
         // Le variabili devono essere sempre inizializzate
         Prodotto p;
         p = new Prodotto(); // p contiene il riferimento all'area di memoria che contiene l'oggetto 
         
-        Prodotto p1 = new Prodotto();
+        System.out.print("contatore: ");
+        System.out.println(Prodotto.getContatore());
+        
+        Prodotto p1 = new Prodotto("2020-10-10", "Gomma", 2.0F);
         
         // NON ACCESSIBILI SE PRIVATI
         //System.out.println(p.codice);
@@ -31,24 +37,34 @@ public class GestioneMagazzino {
         //System.out.println(p.dataDiProduzione);
         
         //System.out.println(p.getCodice());
-        p.setCodice(10);
+        //p.setCodice(10);
         p.setDataDiProduzione("2015-11-12");
         p.setDescrizione("Tavolo");
         p.setCosto(12.50F); //va specificato il tipo altrimenti il default è double
         
-        p.stampaInfo();
+        System.out.print("contatore: ");
+        System.out.println(Prodotto.getContatore());
         
-        p1.stampaInfo();
+        Prodotto p2 = new Prodotto("2025-12-20", "Penna", 6.0F);
         
-        Prodotto p2 = new Prodotto(25, "2025-12-20", "Penna", 6.0F);
-        
-        p2.stampaInfo();
+        System.out.print("contatore: ");
+        System.out.println(Prodotto.getContatore());
         
         Prodotto p3;
         p3 = p2.clona();
         
         p3.setCosto(1.5F);
         
+        System.out.print("contatore: ");
+        System.out.println(Prodotto.getContatore());
+        
+        //Prodotto p4 = new Prodotto (2, "2026-01-01", "Matita", 1.5F);
+        //p4.stampaInfo();
+        
+        p.stampaInfo();
+        p1.stampaInfo();
+        p2.stampaInfo();
         p3.stampaInfo();
+
     }
 }
