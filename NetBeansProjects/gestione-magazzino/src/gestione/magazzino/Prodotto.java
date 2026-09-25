@@ -19,6 +19,9 @@ public class Prodotto {
     private String descrizione;
     private String dataDiProduzione;
     private float costo;
+    public final int nTags = 3;
+    private int riemp;
+    private String tags[];
     
     // Inizializzatore statico eseguito al caricamento della classe in memoria
     static {
@@ -47,6 +50,8 @@ public class Prodotto {
         this.dataDiProduzione = dataDiProduzione;
         this.descrizione = descrizione;
         this.costo = costo;
+        this.tags = new String[this.nTags];
+        
         contatore++;
     } // Overloading
     
@@ -91,6 +96,15 @@ public class Prodotto {
         this.costo = costo;
     }
     
+    public void aggiungiTag(String tag) {
+        if (riemp == nTags) {
+            System.out.println("Non è possibile aggiungere altri tag.");
+            return;
+        }
+        
+        this.tags[riemp++] = tag;
+    }
+    
     public Prodotto clona() {
         return new Prodotto(this.dataDiProduzione, this.descrizione, this.costo);
     }
@@ -112,5 +126,10 @@ public class Prodotto {
         
         System.out.print("Data di produzione: ");
         System.out.println(dataDiProduzione);
+        
+        System.out.print("Tag: ");
+        for (int i = 0; i < riemp; i++) 
+            System.out.print(this.tags[i] + " ");
+        System.out.println("");
     }   
 }

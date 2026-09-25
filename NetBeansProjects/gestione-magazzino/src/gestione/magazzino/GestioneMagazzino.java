@@ -29,7 +29,7 @@ public class GestioneMagazzino {
         System.out.println(Prodotto.getContatore());
         
         Prodotto p1 = new Prodotto("2020-10-10", "Gomma", 2.0F);
-        
+        p1.aggiungiTag("blu");
         // NON ACCESSIBILI SE PRIVATI
         //System.out.println(p.codice);
         //p.codice = 1;
@@ -41,11 +41,17 @@ public class GestioneMagazzino {
         p.setDataDiProduzione("2015-11-12");
         p.setDescrizione("Tavolo");
         p.setCosto(12.50F); //va specificato il tipo altrimenti il default è double
+        p.aggiungiTag("legno");
+        p.aggiungiTag("plastica");
         
         System.out.print("contatore: ");
         System.out.println(Prodotto.getContatore());
         
         Prodotto p2 = new Prodotto("2025-12-20", "Penna", 6.0F);
+        p2.aggiungiTag("nero");
+        p2.aggiungiTag("giallo");
+        p2.aggiungiTag("legno");
+        p2.aggiungiTag("nuovo");
         
         System.out.print("contatore: ");
         System.out.println(Prodotto.getContatore());
@@ -58,13 +64,13 @@ public class GestioneMagazzino {
         System.out.print("contatore: ");
         System.out.println(Prodotto.getContatore());
         
-        //Prodotto p4 = new Prodotto (2, "2026-01-01", "Matita", 1.5F);
-        //p4.stampaInfo();
+        Prodotto p4 = new Prodotto (2, "2026-01-01", "Matita", 1.5F);
+        p4.aggiungiTag("viola");
         
         p.stampaInfo();
         p1.stampaInfo();
         p2.stampaInfo();
         p3.stampaInfo();
-
+        p4.stampaInfo();
     }
 }
