@@ -18,8 +18,13 @@ public class TestMain {
      */
     public static void main(String[] args) {
         
+        Prodotto p = new Prodotto(22, "Pasta", 12.3, "14-09-2024");
+        System.out.println(p.stampaProdotto());
+        Cliente c = new Cliente("Mario", "Rossi", "MRS001", "viale");
+        System.out.println(c.stampaCliente());
+        
         // Creazione di due oggetti Cliente a cui destinare la fattura        
-        Cliente cliente1 = new Cliente(
+        /*Cliente cliente1 = new Cliente(
             "Luca", 
             "Bianchi", 
             "BNCGLC90C01F205Y", 
@@ -52,7 +57,7 @@ public class TestMain {
         fatt3.aggiungiProdotto(new Prodotto(132,"Tastiera", 25.50, "08-11-2024"));
         fatt3.aggiungiProdotto(new Prodotto(145,"Mouse", 10.00, "30-09-2024"));
         fatt3.aggiungiProdotto(new Prodotto(188,"Monitor", 399.99, "05-02-2025"));
-        System.out.println(fatt3.stampaFattura());
+        System.out.println(fatt3.stampaFattura());*/
     }
     
 }
