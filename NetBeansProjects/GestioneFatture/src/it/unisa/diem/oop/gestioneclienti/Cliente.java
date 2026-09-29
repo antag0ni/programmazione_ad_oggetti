@@ -44,7 +44,7 @@ public class Cliente {
     public String getIndirizzo() {
         return indirizzo;
     }
-    //Cliente: Luca Bianchi | CF: BNCGLC90C01F205Y | Indirizzo: Via Milano 25, Torino
+    
     public String stampaCliente() {
         StringBuffer sb = new StringBuffer();
         sb.append("Cliente: ").append(nome).append(" ").append(cognome).append(" | ");
