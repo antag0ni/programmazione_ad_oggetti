@@ -5,6 +5,7 @@
  */
 package it.unisa.diem.oop.gestioneprodotti;
 import it.unisa.diem.oop.gestioneclienti.Cliente;
+import java.util.Locale;
 
 /**
  *
@@ -59,21 +60,22 @@ public class Fattura {
     public double getPercentualeTassa() {
         return percentualeTassa;
     }
-    public Prodotto[] getArrayProdotti() {
-        return arrayProdotti;
-    }
     
     void aggiungiProdotto(Prodotto p) {
-        if (cont < this.dimensione) {
-            this.arrayProdotti[cont] = p;
-            cont++;
-        } else {
-            System.out.println("Numero massimo di elementi inserito");
+        if (cont == this.dimensione) {
+            int nuovaDim = dimensione + 1;
+            Prodotto[] nuovoArray = new Prodotto[nuovaDim];
+            for(int i = 0; i < cont; i++)
+                nuovoArray[i] = arrayProdotti[i];
+            this.arrayProdotti = nuovoArray;
+            dimensione = nuovaDim;
         }
+        this.arrayProdotti[cont] = p;
+        cont++;
     }
     
     double calcolaImponibile() {
-        int sum = 0;
+        double sum = 0;
         for(int i = 0; i < this.cont; i++) {
             sum += this.arrayProdotti[i].getCosto();
         }
@@ -81,18 +83,9 @@ public class Fattura {
     }
     
     double calcolaTotale() {
-        return this.calcolaImponibile() + this.percentualeTassa;
+        return this.calcolaImponibile() * (1 + this.percentualeTassa);
     }
- /*   
-===== FATTURA ID: 1 (20-09-2025) =====
-Cliente: Luca Bianchi | CF: BNCGLC90C01F205Y | Indirizzo: Via Milano 25, Torino
-35: Pane (Costo: 1,20 €) --- Data Produzione: 20-09-2025
-56: Latte (Costo: 1,00 €) --- Data Produzione: 03-09-2025
-22: Pasta (Costo: 0,90 €) --- Data Produzione: 30-07-2025
--------------------
-Totale da pagare: €3,41
-        */
-    
+
     String stampaFattura() {
         StringBuffer sb = new StringBuffer();
         sb.append("===== FATTURA ID: ").append(codice).append(" (").append(dataEmissione).append(") =====").append('\n');
@@ -100,7 +93,7 @@ Totale da pagare: €3,41
         for (int i = 0; i < this.cont; i++)
             sb.append(this.arrayProdotti[i].stampaProdotto()).append('\n');
         sb.append("-------------------").append('\n');
-        sb.append("Totale da pagare: €").append(this.calcolaTotale()).append('\n');
+        sb.append("Totale da pagare: €").append(String.format(Locale.ITALY, "%.2f", this.calcolaTotale())).append('\n');
         return sb.toString();
     }
 }

@@ -52,6 +52,16 @@ public class TestMain {
         fatt3.aggiungiProdotto(new Prodotto(145,"Mouse", 10.00, "30-09-2024"));
         fatt3.aggiungiProdotto(new Prodotto(188,"Monitor", 399.99, "05-02-2025"));
         System.out.println(fatt3.stampaFattura());
+        
+        // Test case per l'estensione
+        
+        Fattura fatt4 = new Fattura(2, cliente2, "25-09-2025", 0.22);
+        fatt4.aggiungiProdotto(new Prodotto(1, "A", 1.00, "01-01-2025"));
+        fatt4.aggiungiProdotto(new Prodotto(2, "B", 2.00, "01-01-2025"));
+        fatt4.aggiungiProdotto(new Prodotto(3, "C", 3.00, "01-01-2025"));
+        fatt4.aggiungiProdotto(new Prodotto(4, "D", 4.00, "01-01-2025"));
+        fatt4.aggiungiProdotto(new Prodotto(5, "E", 5.00, "01-01-2025"));
+        System.out.println(fatt4.stampaFattura());
     }
     
 }

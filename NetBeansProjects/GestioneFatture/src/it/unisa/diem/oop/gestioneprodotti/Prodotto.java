@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package it.unisa.diem.oop.gestioneprodotti;
-
+import java.util.Locale;
 /**
  *
  * @author antagoni
@@ -44,26 +44,12 @@ public class Prodotto {
     public String getDataProduzione() {
         return dataProduzione;
     }
-    /*
-    void setCodice(int codice) {
-        this.codice = codice;
-    }
-    void setDescrizionee(String descrizione) {
-        this.descrizione = descrizione;
-    }
-    void setCosto(double costo) {
-        this.costo = costo;
-    }
-    void setDataProduzione(String dataProduzione) {
-        this.dataProduzione = dataProduzione;
-    }
-    */
-    
+
     public String stampaProdotto() {
         StringBuffer sb = new StringBuffer();
         sb.append(codice).append(": ");
         sb.append(descrizione).append(' ');
-        sb.append("(Costo: ").append(costo).append(" €) --- ");
+        sb.append("(Costo: ").append(String.format(Locale.ITALY, "%.2f", costo)).append(" €) --- ");
         sb.append("Data Produzione: ").append(dataProduzione);
         return sb.toString();
     }
