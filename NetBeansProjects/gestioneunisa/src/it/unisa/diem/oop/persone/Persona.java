@@ -26,32 +26,20 @@ public class Persona {
         this.codiceFiscale = codiceFiscale;
     }
     
-    public String getNome() {
-        return nome;
-    }
-    public String getCognome() {
-        return cognome;
-    }
-    public String getCodiceFiscale() {
-        return codiceFiscale;
-    }
+    public String getNome() { return nome; }
+    public String getCognome() { return cognome; }
+    public String getCodiceFiscale() { return codiceFiscale; }
     
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
-    }
-    public void setCodiceFiscale(String codiceFiscale) {
-        this.codiceFiscale = codiceFiscale;
-    }
+    public void setNome(String nome) { this.nome = nome; }
+    public void setCognome(String cognome) { this.cognome = cognome; }
+    public void setCodiceFiscale(String codiceFiscale) { this.codiceFiscale = codiceFiscale; }
     
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
         sb.append("Nome: ").append(nome).append('\n');
         sb.append("Cognome: ").append(cognome).append('\n');
-        sb.append("Codice Fiscale: ").append(codiceFiscale).append('\n');
+        sb.append("Codice Fiscale: ").append(codiceFiscale);
         return sb.toString();
     }
     
