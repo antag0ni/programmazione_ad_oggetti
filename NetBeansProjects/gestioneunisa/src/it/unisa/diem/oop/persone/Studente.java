@@ -5,6 +5,8 @@
  */
 package it.unisa.diem.oop.persone;
 
+import it.unisa.diem.oop.persone.eccezioni.VotoNonValidoException;
+
 /**
  *
  * @author antagoni
@@ -14,6 +16,10 @@ public class Studente extends PersonaUnisa {
 
     public Studente(String nome, String cognome, String codiceFiscale, String matricola, double votoMedio) {
         super(nome, cognome, codiceFiscale, matricola);
+        if (votoMedio < 18 || votoMedio > 31) {
+            // throw new RuntimeException("Voto non valido");
+            throw new VotoNonValidoException("Il voto " + votoMedio + " non può essere assegnato.");
+        }
         this.votoMedio = votoMedio;
     }
     
