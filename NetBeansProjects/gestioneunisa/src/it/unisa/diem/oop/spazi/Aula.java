@@ -6,6 +6,9 @@
 package it.unisa.diem.oop.spazi;
 
 import it.unisa.diem.oop.persone.Persona;
+import it.unisa.diem.oop.spazi.eccezioni.AccessibileException;
+import it.unisa.diem.oop.spazi.eccezioni.AccessibilePienoException;
+import it.unisa.diem.oop.spazi.eccezioni.AccessibileVuotoException;
 
 /**
  *
@@ -36,19 +39,22 @@ public class Aula extends Spazio {
     }
 
     @Override
-    public void entra(Persona p) {
+    public void entra(Persona p) throws AccessibilePienoException {
         if(isPieno()) {
-            System.out.println("Spazio pieno");
-            return;
+            throw new AccessibilePienoException();
+            /* System.out.println("Spazio pieno");
+               return; */
         }
         persone[riemp++] = p;
     }
 
     @Override
-    public Persona esce() {
+    public Persona esce() throws AccessibileVuotoException {
         if (isVuoto()) {
-            System.out.println("Spazio vuoto");
-            return null;
+            throw new AccessibileVuotoException();
+            
+            /* System.out.println("Spazio vuoto");
+               return null; */
         }
         
         Persona p = persone[--riemp];

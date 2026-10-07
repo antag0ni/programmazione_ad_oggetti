@@ -6,12 +6,15 @@
 package it.unisa.diem.oop.spazi;
 
 import it.unisa.diem.oop.persone.Persona;
+import it.unisa.diem.oop.spazi.eccezioni.AccessibileException;
+import it.unisa.diem.oop.spazi.eccezioni.AccessibilePienoException;
+import it.unisa.diem.oop.spazi.eccezioni.AccessibileVuotoException;
 
 /**
  *
  * @author antagoni
  */
 public interface Accessibile {
-    void entra(Persona p);
-    Persona esce();
+    void entra(Persona p) throws AccessibileException;
+    Persona esce() throws AccessibileVuotoException;
 }

@@ -5,8 +5,6 @@
  */
 package it.unisa.diem.oop.spazi;
 
-import it.unisa.diem.oop.persone.Persona;
-
 /**
  *
  * @author antagoni
