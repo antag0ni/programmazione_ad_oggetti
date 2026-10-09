@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="it.unisa.diem.oop.persone">
+  <ClassDiagramComponents>
+    <Class name="Docente" package="it.unisa.diem.oop.persone" visibility="public" xPosition="657.0" yPosition="219.0">
+      <Fields>
+        <Field name="insegnamento" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="String" name="codiceFiscale"/>
+          <Argument type="String" name="matricola"/>
+          <Argument type="String" name="insegnamento"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRuolo" returnType="String" visibility="public"/>
+        <Method name="getInsegnamento" returnType="String" visibility="public"/>
+        <Method name="setInsegnamento" returnType="void" visibility="public">
+          <Argument type="String" name="insegnamento"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VotoNonValidoException" package="it.unisa.diem.oop.persone.eccezioni" visibility="public" xPosition="581.0" yPosition="635.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="msg"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="it.unisa.diem.oop.persone" visibility="public" xPosition="1589.0" yPosition="187.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="protected"/>
+        <Field name="cognome" type="String" visibility="private"/>
+        <Field name="codiceFiscale" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="String" name="codiceFiscale"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="getCognome" returnType="String" visibility="public"/>
+        <Method name="getCodiceFiscale" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="setCognome" returnType="void" visibility="public">
+          <Argument type="String" name="cognome"/>
+        </Method>
+        <Method name="setCodiceFiscale" returnType="void" visibility="public">
+          <Argument type="String" name="codiceFiscale"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PersonaUnisa" package="it.unisa.diem.oop.persone" visibility="public" isAbstract="true" xPosition="1013.0" yPosition="553.0">
+      <Fields>
+        <Field name="matricola" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="String" name="codiceFiscale"/>
+          <Argument type="String" name="matricola"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMatricola" returnType="String" visibility="public"/>
+        <Method name="setMatricola" returnType="void" visibility="public">
+          <Argument type="String" name="matricola"/>
+        </Method>
+        <Method name="getRuolo" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Studente" package="it.unisa.diem.oop.persone" visibility="public" xPosition="1612.0" yPosition="767.0">
+      <Fields>
+        <Field name="votoMedio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="String" name="codiceFiscale"/>
+          <Argument type="String" name="matricola"/>
+          <Argument type="double" name="votoMedio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getVotoMedio" returnType="double" visibility="public"/>
+        <Method name="setVotoMedio" returnType="void" visibility="public">
+          <Argument type="double" name="votoMedio"/>
+        </Method>
+        <Method name="getRuolo" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tecnico" package="it.unisa.diem.oop.persone" visibility="public" xPosition="1048.0" yPosition="1013.0">
+      <Fields>
+        <Field name="dipartimento" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="cognome"/>
+          <Argument type="String" name="codiceFiscale"/>
+          <Argument type="String" name="matricola"/>
+          <Argument type="String" name="dipartimento"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDipartimento" returnType="String" visibility="public"/>
+        <Method name="setDipartimento" returnType="void" visibility="public">
+          <Argument type="String" name="insegnamento"/>
+        </Method>
+        <Method name="getRuolo" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="it.unisa.diem.oop.persone.PersonaUnisa" target="it.unisa.diem.oop.persone.Persona"/>
+    <IsRelation name="is" source="it.unisa.diem.oop.persone.Docente" target="it.unisa.diem.oop.persone.PersonaUnisa"/>
+    <IsRelation name="is" source="it.unisa.diem.oop.persone.Tecnico" target="it.unisa.diem.oop.persone.PersonaUnisa"/>
+    <IsRelation name="is" source="it.unisa.diem.oop.persone.Studente" target="it.unisa.diem.oop.persone.PersonaUnisa"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

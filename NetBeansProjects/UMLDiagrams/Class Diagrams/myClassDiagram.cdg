@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="myClassDiagram">
+  <ClassDiagramComponents>
+    <Class name="Utente" package="" visibility="public" xPosition="337.0" yPosition="104.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="cognome" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="getCognome" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Studente" package="" visibility="public" xPosition="136.0" yPosition="387.0">
+      <Fields>
+        <Field name="matricola" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getMatricola" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Docente" package="" visibility="public" xPosition="567.0" yPosition="285.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getCorsi" returnType="List" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Corso" package="" visibility="public" xPosition="567.0" yPosition="493.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="getListaIscritti" returnType="List" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Docente" target="Utente"/>
+    <IsRelation name="is" source="Studente" target="Utente"/>
+    <HasRelation name="iscritti" source="Corso" target="Studente" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="docenti" source="Corso" target="Docente" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
