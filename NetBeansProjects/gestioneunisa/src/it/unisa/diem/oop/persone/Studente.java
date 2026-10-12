@@ -36,6 +36,13 @@ public class Studente extends PersonaUnisa {
         return "Studente";
     }
     
+    /*
+    @Override
+    public boolean equal(Object obj) {
+    
+    }
+    */
+    
     @Override
     public String toString() {
         return super.toString() + "Voto medio: " + votoMedio;

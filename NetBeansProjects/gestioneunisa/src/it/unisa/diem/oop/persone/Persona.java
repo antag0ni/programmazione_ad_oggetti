@@ -10,7 +10,7 @@ package it.unisa.diem.oop.persone;
  * @author antagoni
  */
 
-public class Persona {
+public class Persona implements Clonabile <Persona> {
     protected String nome;
     private String cognome;
     private String codiceFiscale;
@@ -35,12 +35,34 @@ public class Persona {
     public void setCodiceFiscale(String codiceFiscale) { this.codiceFiscale = codiceFiscale; }
     
     @Override
+    public final boolean equals(Object obj) { // Object invece di Persona perché non sappiamo che tipo passeremo
+        // Verifica se l'oggetto esiste
+        if (obj == null) return false;
+        
+        // Riflessività
+        if (this == obj) return true;
+        
+        // Simmetria
+        if (this.getClass() != obj.getClass()) return false;
+        
+        // if (!(obj instanceof Persona)) return false; // Non simmetrico
+        
+        Persona p = (Persona) obj; // Downcast
+        return this.codiceFiscale.equals(p.codiceFiscale); 
+    }
+    
+    @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
         sb.append("Nome: ").append(nome).append('\n');
         sb.append("Cognome: ").append(cognome).append('\n');
-        sb.append("Codice Fiscale: ").append(codiceFiscale);
+        sb.append("Codice Fiscale: ").append(codiceFiscale).append('\n');
         return sb.toString();
     }
-    
+
+    @Override
+    public Persona clona() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
