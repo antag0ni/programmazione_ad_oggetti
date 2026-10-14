@@ -10,7 +10,7 @@ package it.unisa.diem.oop.persone;
  * @author antagoni
  */
 
-public class Persona implements Clonabile <Persona> {
+public class Persona implements Clonabile <Persona>, Comparable<Persona> {
     protected String nome;
     private String cognome;
     private String codiceFiscale;
@@ -45,12 +45,27 @@ public class Persona implements Clonabile <Persona> {
         // Simmetria
         if (this.getClass() != obj.getClass()) return false;
         
-        // if (!(obj instanceof Persona)) return false; // Non simmetrico
+        // if (!(obj instanceof Persona)) return false; // Non simmetrico (sconsigliata)
         
         Persona p = (Persona) obj; // Downcast
         return this.codiceFiscale.equals(p.codiceFiscale); 
     }
-    
+    /*
+    @Override
+    public int hashCode() {
+        return this.codiceFiscale == null ? 0 : this.codiceFiscale.hashCode();
+    }
+    */
+    /*
+    // caso con più attributi
+    @Override
+    public int hashCode() {
+        int result = 17; // numero primo
+        result = 31 * result + this.nome.hashCode();
+        result = 31 * result + this.codiceFiscale.hashCode();
+        return result;
+    }
+    */
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
@@ -63,6 +78,12 @@ public class Persona implements Clonabile <Persona> {
     @Override
     public Persona clona() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+        return this.codiceFiscale.compareTo(o.codiceFiscale);
+        // return Double.compare(28.5, 30); // esempio di comparazione tra due double
     }
 
 }

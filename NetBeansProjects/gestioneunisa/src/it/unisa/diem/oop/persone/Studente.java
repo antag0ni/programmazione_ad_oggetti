@@ -45,6 +45,6 @@ public class Studente extends PersonaUnisa {
     
     @Override
     public String toString() {
-        return super.toString() + "Voto medio: " + votoMedio;
+        return super.toString() + "Voto medio: " + votoMedio + '\n';
     }
 }
