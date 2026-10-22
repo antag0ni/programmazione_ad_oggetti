@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 
 public class Tanker extends Truck {
 
@@ -13,7 +12,7 @@ public class Tanker extends Truck {
         this.totalCapacity = totalCapacity;
         this.compartments = compartments;
         this.foodGrade = foodGrade;
-        if (totalCapacity < 5000 || totalCapacity > 25000 || compartments > 4 || compartments < 0) {
+        if (totalCapacity < 5000 || totalCapacity > 25000 || compartments > 4 || compartments < 1) {
             throw new IllegalArgumentException("Invalid total capacity value or bad compartments number");
         }
     }
@@ -32,8 +31,6 @@ public class Tanker extends Truck {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format("Tanker{totalCapacity=%d, compartments=%d, foodGrade=%b}", totalCapacity, compartments, foodGrade));
-        return sb.toString();
+        return super.toString() + String.format(" -> Tanker{totalCapacity=%d, compartments=%d, foodGrade=%b}", totalCapacity, compartments, foodGrade);
     }
 }

@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.util.*;
 
 public class Truck {
 
@@ -28,7 +27,7 @@ public class Truck {
     public final boolean equals(Object o) {
         if (o == null) return false;
         if (this == o) return true;
-        if (this.getClass() != o.getClass()) return false;
+        if (!(o instanceof Truck)) return false;
             
         Truck t = (Truck)o;
         return getChassisID().equals(t.getChassisID());

@@ -18,6 +18,7 @@ di compartimenti non sono soddisfatti è sollevata un'eccezione di tipo IllegalA
 Fleet: modella la flotta di camion come un'aggregazione di Truck. Si scelga una collezione che non consente l'inserimento di più camion con lo stesso numero di telaio. 
 La classe Fleet dovrà prevedere, ovviamente, un metodo che consente di aggiungere un Truck alla flotta. La classe Fleet prevede anche un metodo filterFoodGrade() che consente 
 la creazione di una flotta contenente i soli camion cisterna food-grade a partire dalla flotta iniziale.
+
 Per accedere direttamente alla pagina della documentazione di Java 8 usare il seguente URL: https://docs.oracle.com/javase/8/docs/api/index.html
 
 Ridefinire per tutte le classi elencate i metodi toString() in modo che l'esecuzione della classe di test fornita "TestFleet" produca il seguente output:

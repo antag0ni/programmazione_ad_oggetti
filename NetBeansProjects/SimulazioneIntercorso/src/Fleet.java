@@ -15,15 +15,10 @@ public class Fleet {
     }
 
     public Fleet filterFoodGrade() {
-        Fleet f = new Fleet(this.name);
-        
-        for (Truck c : flotta) {
-            if (c.getClass().equals(Tanker.class)) {
-                Tanker t = (Tanker)c;
-                if (t.isFoodGrade()) f.add(t);
-            }
-        }
-        
+        Fleet f = new Fleet(this.name + " with only food-grade Tankers");
+        for (Truck c : flotta) 
+            if (c instanceof Tanker && ((Tanker)c).isFoodGrade())
+                f.add(c);
         return f;
     }
 
@@ -32,11 +27,7 @@ public class Fleet {
         StringBuilder sb = new StringBuilder();
         sb.append(this.name).append(" contains:\n");
         for (Truck c : flotta) {
-            if (c.getClass().equals(Truck.class)) {
-                sb.append(c).append('\n');
-            } else {
-                sb.append(String.format("Truck{chassisID=%s, registrationDate=%s}", c.getChassisID(), c.getRegistrationDate())).append(" -> ").append(c).append('\n');
-            }
+            sb.append(c).append('\n');
         }
         return sb.toString();
     }
