@@ -43,7 +43,10 @@ public abstract class Device implements Comparable<Device>{
     
     @Override
     public int hashCode() {
-        return (this.getSerialNumber() == null) ? 0 : this.getSerialNumber().toUpperCase().hashCode();
+        if (this.getSerialNumber() == null) return 0;
+        int hash = 7;
+        hash = 31 * hash + this.getSerialNumber().toUpperCase().hashCode();
+        return hash;
     }
     
     @Override
