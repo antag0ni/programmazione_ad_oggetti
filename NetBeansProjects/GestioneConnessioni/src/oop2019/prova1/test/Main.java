@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package oop2019.prova1.test;
-import oop2019.prova1.gruppo00.*;
+import oop2019.prova1.gruppoXX.*;
 /**
  * Classe per il test del programma
  */
