@@ -132,4 +132,9 @@ public class Prodotto {
             System.out.print(this.tags[i] + " ");
         System.out.println("");
     }   
+    
+    @Override
+    public String toString() {
+        return this.codice + " " + this.descrizione + " " + this.costo + " "; 
+    }
 }
