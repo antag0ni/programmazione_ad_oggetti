@@ -46,15 +46,24 @@ public class MainFattura {
         
         // Fattura.Riga fr = new Fattura.Riga();        // Per poter instanziare una classe interna serve aver instanziato prima la classe esterna
         // Fattura.Riga fr = f.new Fattura.Riga(p1, 1); // static nested class
-        
-        Set<String> nomi = new TreeSet(new Comparator<String>() {
-                
+        /*
+        Comparator<String> clenght = new Comparator<String>() {
             // CLASSE ANONIMA
             @Override
             public int compare(String o1, String o2) {
                 return o1.length() - o2.length();
             }
-        });
+        };
+        */
+        
+        Comparator<String> clenght = (o1, o2) -> o1.length() - o2.length();
+        // oppure
+        /*
+        Comparator<String> clenght = (o1, o2) -> { 
+            return o1.length() - o2.length();
+        };
+        */
+        Set<String> nomi = new TreeSet(clenght);
         
         nomi.add("Tavolo");
         nomi.add("Penna");
