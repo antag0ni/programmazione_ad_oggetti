@@ -43,7 +43,7 @@ public class Main extends Application {
             // lbl.setText(tfd.getText());
             lbl.setText("Hello World!");
             System.out.println(e);
-            lbl.textProperty().bind(tfd.textProperty());
+            // lbl.textProperty().bind(tfd.textProperty());
         });
         
         lbl.textProperty().bind(tfd.textProperty());
