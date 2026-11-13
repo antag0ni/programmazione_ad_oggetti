@@ -1,0 +1,45 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'MyBPMconverter.jnlp',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxqbmxwIHNwZWM9IjEuMCIgeG1sbnM6amZ4PSJodHRwOi8vamF2YWZ4LmNvbSIgaHJlZj0iTXlCUE1jb252ZXJ0ZXIuam5scCI+DQogIDxpbmZvcm1hdGlvbj4NCiAgICA8dGl0bGU+TXlCUE1jb252ZXJ0ZXI8L3RpdGxlPg0KICAgIDx2ZW5kb3I+bGVvbmFyZG9ydW5kbzwvdmVuZG9yPg0KICAgIDxkZXNjcmlwdGlvbj5udWxsPC9kZXNjcmlwdGlvbj4NCiAgICA8b2ZmbGluZS1hbGxvd2VkLz4NCiAgPC9pbmZvcm1hdGlvbj4NCiAgPHJlc291cmNlcz4NCiAgICA8ajJzZSB2ZXJzaW9uPSIxLjYrIiBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+DQogICAgPGphciBocmVmPSJNeUJQTWNvbnZlcnRlci5qYXIiIHNpemU9IjIyMDkiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgPC9yZXNvdXJjZXM+DQogIDxqZng6amF2YWZ4LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJteWJwbWNvbnZlcnRlci5NeUJQTWNvbnZlcnRlciIgIG5hbWU9Ik15QlBNY29udmVydGVyIiAvPg0KICA8dXBkYXRlIGNoZWNrPSJhbHdheXMiLz4NCjwvam5scD4NCg=='
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedmybpmconverter() {
+        dtjava.embed(
+            {
+                id : 'mybpmconverter',
+                url : 'MyBPMconverter.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '800',
+                height : '600',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxqbmxwIHNwZWM9IjEuMCIgeG1sbnM6amZ4PSJodHRwOi8vamF2YWZ4LmNvbSIgaHJlZj0iTXlCUE1jb252ZXJ0ZXIuam5scCI+DQogIDxpbmZvcm1hdGlvbj4NCiAgICA8dGl0bGU+TXlCUE1jb252ZXJ0ZXI8L3RpdGxlPg0KICAgIDx2ZW5kb3I+bGVvbmFyZG9ydW5kbzwvdmVuZG9yPg0KICAgIDxkZXNjcmlwdGlvbj5udWxsPC9kZXNjcmlwdGlvbj4NCiAgICA8b2ZmbGluZS1hbGxvd2VkLz4NCiAgPC9pbmZvcm1hdGlvbj4NCiAgPHJlc291cmNlcz4NCiAgICA8ajJzZSB2ZXJzaW9uPSIxLjYrIiBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+DQogICAgPGphciBocmVmPSJNeUJQTWNvbnZlcnRlci5qYXIiIHNpemU9IjIyMDkiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgPC9yZXNvdXJjZXM+DQogIDxqZng6amF2YWZ4LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJteWJwbWNvbnZlcnRlci5NeUJQTWNvbnZlcnRlciIgIG5hbWU9Ik15QlBNY29udmVydGVyIiAvPg0KICA8dXBkYXRlIGNoZWNrPSJhbHdheXMiLz4NCjwvam5scD4NCg=='
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedmybpmconverter);
+</script>
+
+</head><body>
+<h2>Test page for <b>MyBPMconverter</b></h2>
+  <b>Webstart:</b> <a href='MyBPMconverter.jnlp' onclick="return launchApplication('MyBPMconverter.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>
